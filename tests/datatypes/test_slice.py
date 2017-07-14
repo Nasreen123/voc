@@ -14,6 +14,10 @@ class SliceTests(TranspileTestCase):
             print("x[5::2] = ", x[5::2])
             print("x[:5:2] = ", x[:5:2])
             print("x[2:8:2] = ", x[2:8:2])
+
+            print("x[20::2] = ", x[20::2])
+            print("x[:20:2] = ", x[:20:2])
+            print("x[20:25:2] = ", x[20:25:2])
             """)
 
     def test_negative_indexing_list(self):
@@ -26,8 +30,21 @@ class SliceTests(TranspileTestCase):
 
             print("x[::-2] = ", x[::-2])
             print("x[-5::-2] = ", x[-5::-2])
+            print("x[-5::2] = ", x[-5::2])
+            print("x[-15::2] = ", x[-15::2])
             print("x[:-5:-2] = ", x[:-5:-2])
+            print("x[:5:-2] = ", x[:5:-2])
+            print("x[:-15:2] = ", x[:-15:2])
+
             print("x[-2:-8:-2] = ", x[-2:-8:-2])
+            print("x[-20:-8:-2] = ", x[-20:-8:-2])
+            print("x[-20:-15:-2] = ", x[-20:-15:-2])
+            print("x[-20::-2] = ", x[-20::-2])
+            print("x[5:-15:-2] = ", x[5:-15:-2])
+            print("x[-12:0:-2] = ", x[-12:0:-2])
+            print("x[-12::-2] = ", x[-12::-2])
+            print("x[- 5 - len(x): -1] = ", x[- 5 - len(x): -1])
+
             """)
 
     def test_slice_range(self):

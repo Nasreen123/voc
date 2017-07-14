@@ -338,7 +338,7 @@ public class List extends org.python.types.Object {
                         long start;
                         if (slice.start != null) {
                             if (slice.start.value < 0) {
-                                start = this.value.size() + slice.start.value;
+                                start = Math.max((this.value.size() + slice.start.value), -1);
                             } else {
                                 start = Math.min(slice.start.value, this.value.size());
                             }
@@ -349,14 +349,13 @@ public class List extends org.python.types.Object {
                         long stop;
                         if (slice.stop != null) {
                             if (slice.stop.value < 0) {
-                                stop = this.value.size() + slice.stop.value;
+                                stop = Math.max((this.value.size() + slice.stop.value), 0);
                             } else {
                                 stop = Math.min(slice.stop.value, this.value.size());
                             }
                         } else {
                             stop = -1;
                         }
-
                         for (long i = start; i > stop; i += step) {
                             sliced.add(this.value.get((int) i));
                         }
@@ -364,7 +363,7 @@ public class List extends org.python.types.Object {
                         long start;
                         if (slice.start != null) {
                             if (slice.start.value < 0) {
-                                start = this.value.size() + slice.start.value;
+                                start = Math.max((this.value.size() + slice.start.value), 0);
                             } else {
                                 start = Math.min(slice.start.value, this.value.size());
                             }
@@ -375,7 +374,7 @@ public class List extends org.python.types.Object {
                         long stop;
                         if (slice.stop != null) {
                             if (slice.stop.value < 0) {
-                                stop = this.value.size() + slice.stop.value;
+                                stop = Math.max((this.value.size() + slice.stop.value), 0);
                             } else {
                                 stop = Math.min(slice.stop.value, this.value.size());
                             }
