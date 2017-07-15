@@ -340,7 +340,7 @@ public class List extends org.python.types.Object {
                             if (slice.start.value < 0) {
                                 start = Math.max((this.value.size() + slice.start.value), -1);
                             } else {
-                                start = Math.min(slice.start.value, this.value.size());
+                                start = Math.min(slice.start.value, this.value.size() - 1);
                             }
                         } else {
                             start = this.value.size() - 1;

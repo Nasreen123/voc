@@ -44,7 +44,8 @@ class SliceTests(TranspileTestCase):
             print("x[-12:0:-2] = ", x[-12:0:-2])
             print("x[-12::-2] = ", x[-12::-2])
             print("x[- 5 - len(x): -1] = ", x[- 5 - len(x): -1])
-
+            print("x[len(x)::-2] = ", x[len(x)::-2])
+            print("x[len(x)+2::-2] = ", x[len(x)+2::-2])
             """)
 
     def test_slice_range(self):
